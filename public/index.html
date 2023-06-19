@@ -30,7 +30,7 @@
     <meta property="twitter:title" content="Quiz App" />
     <meta property="twitter:description" content="Welcome to the React Quiz App where you can take quizzes, answer questions, and have fun!" />
     <meta property="twitter:image" content="" />
-
+    
     <!-- Custom CSS Styles -->
     <style>
         body {
@@ -72,9 +72,9 @@
             transition: background-color 0.3s;
         }
 
-            .cta-button:hover {
-                background-color: #ff453a;
-            }
+        .cta-button:hover {
+            background-color: #ff453a;
+        }
     </style>
 </head>
 <body>
@@ -84,6 +84,18 @@
         <p>Take quizzes, answer questions, and have fun!</p>
         <a href="#" class="cta-button">Start Quiz</a>
     </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page
+
+    <!-- Display the retrieved value -->
+    <div id="myContainer"></div>
+
+    <!-- JavaScript code -->
+    <script>
+        // Retrieve data from localStorage
+        const retrievedValue = localStorage.getItem("myKey");
+
+        // Display the retrieved value in the container
+        const container = document.getElementById("myContainer");
+        container.textContent = retrievedValue;
+    </script>
+</body>
+</html>
