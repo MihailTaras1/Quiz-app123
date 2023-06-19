@@ -12,7 +12,14 @@ const Axios = ({ url }) => {
     const fetchData = () => {
       axios
         .get(url)
-        .then((res) => setResponse(res.data))
+        .then((res) => {
+          // Save the response data to a variable or storage solution
+          const savedResponse = res.data;
+          const storageKey = "apiResponse"; // Path to the saved response
+          localStorage.setItem(storageKey, JSON.stringify(savedResponse));
+          // Update the state with the response data
+          setResponse(savedResponse);
+        })
         .catch((err) => setError(err))
         .finally(() => setLoading(false));
     };
