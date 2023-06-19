@@ -8,25 +8,25 @@ const Axios = ({ url }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {a
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(url);
-        // Store the response data in your desired storage solution
-        // For example, you can use local storage:
-        localStorage.setItem("triviaData", JSON.stringify(res.data));
-
-        setResponse(res.data);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
+  useEffect(() => {
+    const fetchData = () => {
+      axios
+        .get(url)
+        .then((res) => {
+          // Save the response data to a variable or storage solution
+          const savedResponse = res.data;
+          const storageKey = "apiResponse"; // Path to the saved response
+          localStorage.setItem(storageKey, JSON.stringify(savedResponse));
+          // Update the state with the response data
+          setResponse(savedResponse);
+        })
+        .catch((err) => setError(err))
+        .finally(() => setLoading(false));
     };
     fetchData();
   }, [url]);
 
-  return { storedResponse: response, error, loading };
+  return { response, error, loading };
 };
 
 export default Axios;
