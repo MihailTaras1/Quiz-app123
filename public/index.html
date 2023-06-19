@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="./favicon.ico" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -18,49 +15,75 @@
     <!-- Primary Meta Tags -->
     <title>Quiz App</title>
     <meta name="title" content="Quiz App" />
-    <meta
-      name="description"
-      content="welcome to the React quiz app where you can take quiz give an answer and have fun"
-    />
+    <meta name="description" content="Welcome to the React Quiz App where you can take quizzes, answer questions, and have fun!" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:title" content="Quiz App" />
-    <meta
-      property="og:description"
-      content="welcome to the React quiz app where you can take quiz give an answer and have fun"
-    />
+    <meta property="og:description" content="Welcome to the React Quiz App where you can take quizzes, answer questions, and have fun!" />
     <meta property="og:image" content="" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="" />
     <meta property="twitter:title" content="Quiz App" />
-    <meta property="twitter:description" content="" />
+    <meta property="twitter:description" content="Welcome to the React Quiz App where you can take quizzes, answer questions, and have fun!" />
     <meta property="twitter:image" content="" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  </head>
-  <body>
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #ff6f61;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6f61;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            .cta-button:hover {
+                background-color: #ff453a;
+            }
+    </style>
+</head>
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+        <h1>Welcome to the Quiz App!</h1>
+        <p>Take quizzes, answer questions, and have fun!</p>
+        <a href="#" class="cta-button">Start Quiz</a>
+    </div>
     <!--
       This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+      If you open it directly in the browser, you will see an empty page
