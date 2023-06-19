@@ -1,0 +1,11 @@
+const fs = require('fs');
+const path = require('path');
+
+// Assuming the API response is stored in the 'response' variable
+const responseData = JSON.stringify(response, null, 2);
+
+// Specify the file path where you want to create the JSON file
+const filePath = path.join(__dirname, 'C:\Users\mihai\Quiz-app\Quiz-app123\src');
+
+// Write the response data to the file
+fs.writeFileSync(filePath, responseData);
