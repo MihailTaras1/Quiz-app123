@@ -1,0 +1,16 @@
+
+
+
+
+
+const key = "myKey";
+const value = "myValue";
+localStorage.setItem(key, value);
+
+// Retrieve data from localStorage
+const retrievedValue = localStorage.getItem(key);
+console.log(retrievedValue); // Output: "myValue"
+
+// Display the retrieved value on the webpage
+const container = document.getElementById("myContainer");
+container.textContent = retrievedValue;
