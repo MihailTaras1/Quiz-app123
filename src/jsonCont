@@ -1,11 +1,28 @@
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-// Assuming the API response is stored in the 'response' variable
-const responseData = JSON.stringify(response, null, 2);
+const app = express();
 
-// Specify the file path where you want to create the JSON file
-const filePath = path.join(__dirname, 'C:\Users\mihai\Quiz-app\Quiz-app123\pachete.json');
+// Endpoint to save the response as a JSON file
+app.post('/save-response', (req, res) => {
+  const responseData = req.body; // Assuming the response data is sent in the request body
 
-// Write the response data to the file
-fs.writeFileSync(filePath, responseData);
+  // Specify the file path where you want to save the JSON file
+  const filePath = path.join(__dirname, 'C:\Users\mihai\Quiz-app\Quiz-app123\pachete.json');
+
+  // Write the response data to the file
+  fs.writeFile(filePath, JSON.stringify(responseData, null, 2), (err) => {
+    if (err) {
+      console.error('Error saving JSON file:', err);
+      res.status(500).send('Error saving JSON file');
+    } else {
+      console.log('JSON file saved successfully');
+      res.sendStatus(200);
+    }
+  });
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
